@@ -1,0 +1,36 @@
+ <nav class="navbar navbar-inverse">
+     <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <a class="navbar-brand" routerLink='movies'>MOVIES</a>
+  
+  <div *ngIf='!authService.isLoggedIn'> 
+    <a routerLink='signup'>
+      <button type="button" class="btn btn-default navbar-btn" style="float:right">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        Signup</button>
+      </a>
+    <a routerLink='login'>
+        <button type="button" class="btn btn-default navbar-btn" style="float:right">
+          <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+        Login</button>
+        </a>
+  </div>
+
+     <div *ngIf='authService.isLoggedIn'>
+        <a routerLink='user'>
+      <button type="button" class="btn btn-default navbar-btn" style="float:left">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        User</button>
+      </a>                
+      <button type="button" class="btn btn-default navbar-btn" style="float:right" (click)="onLogOut()">
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+              Logout</button>
+
+      </div>
+     </div>
+     </div>
+    </nav>
+
+
+
+<div><router-outlet></router-outlet></div>

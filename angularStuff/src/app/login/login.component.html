@@ -1,0 +1,12 @@
+<div class='container'>
+    <div><h2 style="text-align:center; color:darkred"><strong> Login</strong></h2>
+    <form class='form-group' method='post'>
+        <input type='text' class='form-control center-block' style="text-align:center;width:25%" [(ngModel)]='userName' name='userName' placeholder='enter username'>
+        <input type='password' class='form-control center-block' style="text-align:center;width:25%" [(ngModel)]='password' name='password' placeholder='enter password'>
+        <button type="button" class="btn btn-default center-block" (click)='onLogin()'>Login</button>
+    </form>
+    </div>
+
+<div *ngIf='!check' class='container' style="text-align:center;color:black">
+  <h2> <strong> User name or Password entered wrong!!</strong></h2>
+</div>

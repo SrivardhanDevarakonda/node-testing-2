@@ -1,0 +1,23 @@
+<div class="page-header">
+  <h1 style="text-align:center; color:darkred"><strong> MOVIE MANIA.mov</strong></h1>
+</div>
+
+<div class="container">  
+    <div align="right">
+      <div class="">
+        <div class="form-group"  style="width:25%">
+            <input type="text" class="form-control" placeholder="Search.." [(ngModel)]='input'> 
+        </div>
+      </div>
+    </div>
+                <div class="row">
+                <div class = "col-xs-3" *ngFor = 'let movie of moviesList | MoviePipe : input'>
+                <a [routerLink]="['/movieDetails',movie._id]">
+                    <img src='{{movie.imageUrl}}' class="img-rounded center-block"><br>
+                    <p style="color:black;text-align:center"><strong> {{movie.movieName}}</strong></p>
+                </a>
+                </div>
+                </div>
+                </div>
+
+                

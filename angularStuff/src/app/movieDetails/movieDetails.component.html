@@ -1,0 +1,49 @@
+<h1 style="text-align:center;color:darkred"><strong> Movie Details</strong></h1>
+<div class="container">
+    <div style=" color:white">
+    <div style="text-align:center; color:white">
+        <img src='{{details.imageUrl}}' class="img-responsive center-block">
+        <b style="color:black">Name</b>        : {{details.movieName}}<br>
+        <b style="color:black">Description</b> : {{details.description}}<br>
+        <b style="color:black">Year  </b>      : {{details.yearReleased}}<br>
+        <b style="color:black">Rating</b>      : {{details.rating}}<br>
+    </div>   
+</div>
+<div class="row" >
+  <div class="col-xs-3" >
+    
+    <h3 style="color:black"><strong> Actors:</strong></h3>
+    <div class="text" *ngFor="let actor of details.actors" style=" color:white" (click)="onSelectActor(actor)">
+        {{actor}}
+    </div>
+
+    <h3 style="color:black"><strong> Directors:</strong></h3>
+    <div class="text" *ngFor="let director of details.directors" style=" color:white" (click)="onSelectDirector(director)">
+      {{director}}
+    </div>
+
+  </div>
+
+  <div class="col-xs-6" *ngIf="isValidActor" >
+    <h1 style=" color:black">Actor Details: </h1>
+      <div class="card">
+        <ul class="list-group" style="font-size: 20px;color:black">
+          <li class="list-group-item"> Actor Name  : <strong> {{actor.actorName}}</strong> </li>
+          <li class="list-group-item"> Age  : <strong> {{actor.age}}</strong> </li>
+          <li class="list-group-item"> Gender  : <strong> {{actor.gender}}</strong> </li>
+          <li class="list-group-item"> Movies acted  : <strong> {{actor.moviesActed}}</strong> </li>
+        </ul>
+      </div>
+  </div>
+  <div class="col-xs-8" *ngIf="isValidDirector" >
+    <h1 style=" color:black">Director Details: </h1>
+      <div class="card">
+        <ul class="list-group" style="font-size: 20px;color:black">
+          <li class="list-group-item"> Director Name  : <strong> {{director.directorName}}</strong> </li>
+          <li class="list-group-item"> Age  : <strong> {{director.age}}</strong> </li>
+          <li class="list-group-item"> Gender  : <strong> {{director.gender}}</strong> </li>
+          <li class="list-group-item"> Movies directed  : <strong> {{director.moviesDirected}}</strong> </li>
+        </ul>
+      </div>
+  </div>
+</div>

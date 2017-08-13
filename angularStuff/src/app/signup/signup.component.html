@@ -1,0 +1,8 @@
+<div class='container'>
+<div><h2 style="text-align:center; color:darkred"><strong> Create an Account</strong></h2>
+<form class='form-group' method='post'>
+    <input type='text' class='form-control center-block' [(ngModel)]='userName' name='userName' style="width:35%" placeholder='enter user name'>
+    <input type='password' class='form-control center-block' [(ngModel)]='password' name='password' style="width:35%" placeholder='enter password'>
+    <button type="button" class="btn btn-default center-block" (click)='onSignUp()'>Register</button>
+</form>
+</div>

@@ -1,0 +1,36 @@
+<h2 style="text-align:center;color:darkred"><strong> Uploaded Movies</strong></h2>
+<div class="container">  
+<div *ngIf="visible">
+  <form class="modal-content animate" method='post'>
+    <h2 style="text-align:center; color:black">Update Movie</h2>
+    <div class="container">
+    <input type='text' class='form-control' style="width:60%" [(ngModel)]='name' name='name' placeholder='{{movie.movieName}}'>
+    <input type='text' class='form-control' style="width:60%" [(ngModel)]='description' name='description' placeholder='{{movie.description}}'>
+    <input type='number' class='form-control' style="width:60%" [(ngModel)]='yearReleased' name='yearReleased' placeholder='{{movie.yearReleased}}'>        
+    <input type='number' class='form-control' style="width:60%" [(ngModel)]='rating' name='rating' placeholder='{{movie.rating}}'>
+    <input type='text' class='form-control' style="width:60%" [(ngModel)]='actors' name='actors' placeholder='{{movie.actors}}'>
+    <input type='text' class='form-control' style="width:60%" [(ngModel)]='directors' name='directors' placeholder='{{movie.directors}}'> 
+    <input type='text' class='form-control' style="width:60%" [(ngModel)]='imageUrl' name='imageUrl' placeholder='{{movie.imageUrl}}'>
+
+      <button type="button" class="btn btn-success" (click)='onUpdateMovie()'>Update</button>
+      <button type="button" class="btn danger" (click)="cancel()" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<div class="row">
+    <div class = "col-xs-3" *ngFor = 'let movie of movies'>
+     <img src='{{movie.imageUrl}}' wclass="img-responsive center-block">
+        <p style="color:black;text-align:center"><strong> {{movie.movieName}}</strong></p>
+        <button class="btn btn-success" (click)="onUpdate(movie)">Update</button>
+        <button class="btn danger" (click)="deleteMovie(movie._id)">Delete</button><br>
+    </div>
+</div>
+</div>
+<br>
+<br>
+<div class="container">
+<button class="btn btn-success center-block" routerLink="insert" >Upload New Movie</button>
+</div>
+
+<div><router-outlet></router-outlet></div>

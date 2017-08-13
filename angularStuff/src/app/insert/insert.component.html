@@ -1,0 +1,14 @@
+<div class='container'>
+<div><h2 style="text-align:center; color:black">Upload Movies</h2>
+<form class='form-group' method='post'>
+    <input type='text' class='form-control center-block' style="width:60%" [(ngModel)]='movieName' name='movieName' placeholder='Enter Movie Name'>
+    <input type='text' class='form-control center-block' style="width:60%" [(ngModel)]='description' name='description' placeholder='Enter Description'>
+    <input type='number' class='form-control center-block' style="width:60%" [(ngModel)]='yearReleased' name='yearReleased' placeholder='Enter year released'>        
+    <input type='number' class='form-control center-block' style="width:60%" [(ngModel)]='rating' name='rating' placeholder='Enter rating'>
+    <input type='text' class='form-control center-block' style="width:60%" [(ngModel)]='actors' name='actors' placeholder='Enter actors'>
+    <input type='text' class='form-control center-block' style="width:60%" [(ngModel)]='directors' name='directors' placeholder='enter directors'> 
+    <input type='text' class='form-control center-block' style="width:60%" [(ngModel)]='imageUrl' name='imageUrl' placeholder='enter imageUrl'> 
+    
+    <button type="button" class="btn btn-success center-block" (click)='onUpload()'>Upload</button>
+</form>
+</div>
